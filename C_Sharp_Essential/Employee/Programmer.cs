@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Programmer : Employee, ITaxable
+    class Programmer : Employee
     {
         public Programmer(string name, string surname) : base(name, surname)
         {
@@ -10,20 +10,25 @@
 
         public override void GetEmployeeInfo()
         {
-            Console.WriteLine($"Employee name and surname : {this.Name}, {Surname}");
+            Console.WriteLine();
         }
 
-        public void SetUserDetails(string position, string salary, string taxes, string experience)
+        public void SetUserDetails(string position, double salary, int experience)
         {
             Position = position;
             Salary = salary;
-            Taxes = taxes;
             Experience = experience;
         }
 
-        public void CalculateTax(int tax)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return
+                $"Employee name and surname : {Name}, {Surname} " +
+                $"\nSalary = {Salary} USD" +
+                $"\nPosition = {Position} " +
+                $"\nExperience = {Experience} year(s)" +
+                $"\nTax amount (per month) = {CalculateTax()} USD" +
+                $"\nGross Salary = {CalculateGrossSalary()} USD";
         }
     }
 }

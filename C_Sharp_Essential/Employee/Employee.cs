@@ -1,7 +1,5 @@
 ﻿namespace Employee
 {
-    using System;
-
     abstract class Employee
     {
 
@@ -10,12 +8,11 @@
         //Создать метод рассчитывающий оклад сотрудника (в зависимости от должности и стажа) и налоговый сбор.
         //Написать программу, которая выводит на экран информацию о сотруднике(фамилия, имя, должность), оклад и налоговый сбор.
 
-        string Name { get; }
-        string Surname { get; }
+        protected string Name { get; }
+        protected string Surname { get; }
 
         protected string Position { get; set; }
-        protected string Salary { get; set; }
-        protected string Taxes { get; set; }
+        protected double Salary { get; set; }
         protected int Experience { get; set; }
 
         protected Employee(string name, string surname)
@@ -25,6 +22,24 @@
         }
 
         public abstract void GetEmployeeInfo();
-        
+
+        public double CalculateTax()
+        {
+            if (Experience > 5)
+            {
+                return Salary / 100 * 3;
+            }
+            if (Position == "manager" & Salary > 5000)
+            {
+                return Salary / 100 * 10;
+            }
+            return Salary / 100 * 5;
+        }
+
+        protected double CalculateGrossSalary()
+        {
+            return Salary + CalculateTax();
+        }
+
     }
 }
