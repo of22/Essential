@@ -18,7 +18,7 @@
             Rub = rub;
         }
 
-        public double Convert(Currencies initialCurrency, Currencies resultCurrency, string value)
+        public double Convert(Currencies initialCurrency, Currencies resultCurrency, string value) // change parameter to double , 2 - also add iformatProvider as parameter
         {
             NumberFormatInfo provider = new NumberFormatInfo
             {
