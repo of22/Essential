@@ -4,13 +4,13 @@
 
     enum Currencies
     {
-        [Description("Uah")]
+        [Description("UAH")]
         Uah,
-        [Description("Usd")]
+        [Description("USD")]
         Usd,
-        [Description("Eur")]
+        [Description("EUR")]
         Eur,
-        [Description("Rub")]
+        [Description("RUB")]
         Rub
     }
 }
