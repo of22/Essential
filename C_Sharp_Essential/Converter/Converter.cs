@@ -18,42 +18,35 @@
             Rub = rub;
         }
 
-        public double Convert(Currencies initialCurrency, Currencies resultCurrency, string value) // change parameter to double , 2 - also add iformatProvider as parameter
+        public double Convert(Currencies initialCurrency, Currencies resultCurrency, double value) // change parameter to double , 2 - also add iformatProvider as parameter
         {
-            NumberFormatInfo provider = new NumberFormatInfo
-            {
-                NumberDecimalSeparator = ",",
-                NumberGroupSeparator = "."
-            };
-
-            //converting received string value to Double
-            double convertedValue = System.Convert.ToDouble(value, provider);
             double calculatedResult = -0.1;
 
             if (initialCurrency == resultCurrency)
             {
-                return convertedValue;
+                return value;
             }
 
             //converting received value to uah 
             switch (initialCurrency)
             {
                 case Currencies.Usd:
-                    calculatedResult = convertedValue * Usd;
+                    calculatedResult = value * Usd;
                     break;
                 case Currencies.Eur:
-                    calculatedResult = convertedValue * Eur;
+                    calculatedResult = value * Eur;
                     break;
                 case Currencies.Rub:
-                    calculatedResult = convertedValue * Rub;
+                    calculatedResult = value * Rub;
                     break;
                 case Currencies.Uah:
-                    calculatedResult = convertedValue;
+                    calculatedResult = value;
                     break;
             }
-
+            
             //calculating result
             if (calculatedResult >= 0)
+            {
                 switch (resultCurrency)
                 {
                     case Currencies.Usd:
@@ -65,6 +58,9 @@
                     case Currencies.Uah:
                         return calculatedResult;
                 }
+                Console.WriteLine("You entered value below zero");
+                throw new Exception();
+            }
             throw new Exception();
         }
 

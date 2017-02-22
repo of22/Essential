@@ -1,4 +1,6 @@
-﻿namespace Employee
+﻿using System;
+
+namespace Employee
 {
     class Program
     {
@@ -9,9 +11,14 @@
 
         static void Main()
         {
+            Programmer programmer = new Programmer("Vasiliy", "Vasiliev");
 
+            programmer.SetUserDetails("programmer", 3000d, 10);
 
-            // TODO add CODE!!!
+            Console.WriteLine(programmer.ToString());
+            Console.Write("\nPress any key to quit . . . ");
+            Console.ReadKey();
+
         }
     }
 }
