@@ -1,22 +1,22 @@
 ﻿namespace Vehicle.Entities
 {
     using System;
-    using DocumentWorker;
 
     class Plane : Vehicle
     {
         public int Height { get; }
-        public int Passengeers { get; }
+        public int Passengers { get; }
 
-        public Plane(Coordinates coordinates, int price, int speed, int year, int height, int passengeers) : base(coordinates, price, speed, year)
+        public Plane(Coordinates coordinates, int price, int speed, int year, int height, int passengers) : base(coordinates, price, speed, year)
         {
             Height = height;
-            Passengeers = passengeers;
+            Passengers = passengers;
         }
 
         public override void PrintInformation()
         {
-            Console.WriteLine("asdasdasd");
+            Console.WriteLine($"Coordinates: Latitude = {Coordinates.Latitude}, Longtitude = {Coordinates.Longtitude}. Price = {Price}, Speed = {Speed}, Year = {Year}"
+                + $"\nHeight = {Height}, passengers = {Passengers}");
         }
     }
 }

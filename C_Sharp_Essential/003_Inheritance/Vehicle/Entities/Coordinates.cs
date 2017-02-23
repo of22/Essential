@@ -1,4 +1,4 @@
-﻿namespace DocumentWorker
+﻿namespace Vehicle
 {
     public class Coordinates
     {

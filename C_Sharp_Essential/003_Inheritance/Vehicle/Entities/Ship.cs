@@ -1,7 +1,6 @@
 ﻿namespace Vehicle.Entities
 {
     using System;
-    using DocumentWorker;
 
     class Ship : Vehicle
     {
@@ -16,8 +15,8 @@
 
         public override void PrintInformation()
         {
-            Console.WriteLine("asdasd");
-            ;
+            Console.WriteLine($"Coordinates: Latitude = {Coordinates.Latitude}, Longtitude = {Coordinates.Longtitude}. Price = {Price}, Speed = {Speed}, Year = {Year}"
+                             + $"\nHeight = {Port}, passengers = {Passengers}");
         }
     }
 }
