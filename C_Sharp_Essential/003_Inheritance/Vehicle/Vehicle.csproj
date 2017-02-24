@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Car.cs" />
-    <Compile Include="Coordinates.cs" />
+    <Compile Include="Entities\Coordinates.cs" />
     <Compile Include="Entities\Plane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
