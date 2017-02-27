@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\DocHandler.cs" />
+    <Compile Include="Concrete\TxtHandler.cs" />
+    <Compile Include="Concrete\XmlHandler.cs" />
+    <Compile Include="Base\AbstractHandler.cs" />
+    <Compile Include="Editor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
