@@ -18,9 +18,24 @@
 
             ArrayHelper.FillArrayWithRandomValues(array, 0, 100);
 
+            Console.WriteLine("All array values:");
+
             ArrayHelper.PrintAllArrayValues(array);
 
+            Console.WriteLine("\n*****\n");
+
+            Console.WriteLine("Biggest - " + ArrayHelper.FindBiggestValue(array));
+            Console.WriteLine("Smallest - " + ArrayHelper.FindSmallestValue(array));
+            Console.WriteLine("Average - " + ArrayHelper.FindAverageValue(array));
+            Console.WriteLine("Sum - " + ArrayHelper.CalculateSumOfArrayValues(array));
+            Console.WriteLine("Biggest - " + ArrayHelper.FindBiggestValue(array));
+
+            Console.WriteLine("\n*****\n");
+
+            ArrayHelper.DisplayAllNotEvenNumbers(array);
+
             Console.ReadLine();
+
         }
     }
 }
