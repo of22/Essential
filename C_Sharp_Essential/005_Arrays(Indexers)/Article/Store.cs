@@ -1,16 +1,14 @@
 ﻿namespace Article
 {
+    using System;
+
     public class Store
     {
-        //• вывод информации о товаре по номеру с помощью индекса; 
-        //• вывод на экран информации о товаре, название которого введено с клавиатуры, если таких товаров нет, выдать соответствующее сообщение; 
-        //Написать программу, вывода на экран информацию о товаре.
-
         const string NotFoundText = "Such article isn't found";
 
         public readonly Article[] Articles;
-        public static int Сounter;
-     
+        public static int Counter;
+
         public Store(int size)
         {
             Articles = new Article[size];
@@ -20,13 +18,22 @@
         {
             get
             {
-                foreach (var article in Articles)
+                try
                 {
-                    if (article.Name.ToLower().Equals(key.ToLower()))
+                    foreach (var article in Articles)
                     {
-                        return article.ToString();
+                        if (article.Name.ToLower().Equals(key.ToLower()))
+                        {
+                            return article.ToString();
+                        }
+
                     }
                 }
+                catch (Exception)
+                {
+                    return NotFoundText;
+                }
+
                 return NotFoundText;
             }
         }
@@ -34,9 +41,16 @@
         {
             get
             {
-                if (Articles[index] != null)
+                try
                 {
-                    return Articles[index].ToString();
+                    if (Articles[index] != null)
+                    {
+                        return Articles[index].ToString();
+                    }
+                }
+                catch (Exception)
+                {
+                    return NotFoundText;
                 }
                 return NotFoundText;
             }
@@ -44,16 +58,15 @@
 
         public void AddArticle(string name, string store, double price)
         {
-            if ( name.Length > 1 & store.Length > 1 & 
-                )
+            if (Counter < 0 || Counter >= Articles.Length)
             {
-                
+                throw new Exception("Counter is out of array bounds");
             }
-            Articles[Сounter] = new Article(name, store, price);
-
-            Сounter++;
+            if (name.Length > 1 & store.Length > 1 & price > 0)
+            {
+                Articles[Counter] = new Article(name, store, price);
+            }
+            Counter++;
         }
-
-
     }
 }

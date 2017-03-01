@@ -1,5 +1,7 @@
 ﻿namespace Article
 {
+    using System;
+
     class Program
     {
 
@@ -21,7 +23,13 @@
             store.AddArticle("PC", "Foxtrot", 3.200);
             store.AddArticle("Laptop", "Rozetka", 2.200);
 
+            Console.Write("Enter your article name: ");
+            Console.WriteLine( store[Console.ReadLine()]);
 
+            Console.Write("Enter your article index: ");
+            Console.WriteLine(store[Convert.ToInt32(Console.ReadLine())]);
+
+            Console.ReadLine();
         }
     }
 }
